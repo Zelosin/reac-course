@@ -1,12 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
 
+import React, {useState} from "react";
+import ListComponent from "./components/list/ListComponent";
+
+
 function App() {
-  return (
-    <div className="App">
-      Q
-    </div>
-  );
+    const [searchString, setSearchString] = useState('')
+    const listValue = [
+        {id: 1, title: 'Fist element'},
+        {id: 2, title: 'Second element'},
+        {id: 3, title: 'Third element'}
+    ];
+
+    return (
+        <div className="App">
+            <input onChange={(event) => setSearchString(event.target.value)}/>
+            <ListComponent searchString={searchString} value={listValue} />
+        </div>
+    );
 }
 
 export default App;
