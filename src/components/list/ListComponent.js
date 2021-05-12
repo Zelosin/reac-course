@@ -1,13 +1,12 @@
-import React, {useEffect} from 'react';
+import React from 'react';
+import ListElement from './ListElement'
 
 const ListComponent = (props) =>{
 
     return(
         <ul>
             {props.value.map((element) =>
-                <li key={element.id}>
-                    {element.title}
-                </li>
+                <ListElement id = {element.id} title = {element.title}/>
             )}
         </ul>
     );
