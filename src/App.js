@@ -6,7 +6,7 @@ import ListComponent from "./components/list/ListComponent";
 
 
 function App() {
-    const [searchString, setSearchString] = useState('')
+
     const listValue = [
         {id: 1, title: 'Fist element'},
         {id: 2, title: 'Second element'},
@@ -15,8 +15,7 @@ function App() {
 
     return (
         <div className="App">
-            <input onChange={(event) => setSearchString(event.target.value)}/>
-            <ListComponent searchString={searchString} value={listValue} />
+            <ListComponent value={listValue} />
         </div>
     );
 }
